@@ -1,3 +1,27 @@
+@import '../constants.module.scss';
+
 .Button {
-  background-color: red;
+    outline: none;
+    border: none;
+
+    border-radius: $unit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $unit;
+}
+
+.Button {
+    &.primary {
+        background-color: $primaryColor;
+        color: $textColor;
+    }
+}
+
+.Button {
+    .md {
+        font-size: 1.25rem;
+        padding: 14px 16px;
+    }
 }

@@ -1,5 +1,6 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes } from 'react'
 export interface IPropsButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  title?: string;
-  size?: "sm" | "md" | "lg";
+    title?: string
+    size?: 'sm' | 'md' | 'lg'
+    variant?: 'primary' | 'secondary' | 'tertiary'
 }

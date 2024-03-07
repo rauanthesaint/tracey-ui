@@ -1,42 +1,42 @@
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import postcss from "rollup-plugin-postcss";
-import dts from "rollup-plugin-dts";
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import typescript from '@rollup/plugin-typescript'
+import postcss from 'rollup-plugin-postcss'
+import dts from 'rollup-plugin-dts'
 
-import terser from "@rollup/plugin-terser";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import terser from '@rollup/plugin-terser'
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 
-const packageJson = require("./package.json");
+const packageJson = require('./package.json')
 
 export default [
-  {
-    input: "src/index.ts",
-    output: [
-      {
-        file: packageJson.main,
-        format: "esm",
-        sourcemap: true,
-      },
-    ],
-    plugins: [
-      // NEW
-      typescript(),
-      peerDepsExternal(),
+    {
+        input: 'src/index.ts',
+        output: [
+            {
+                file: packageJson.main,
+                format: 'esm',
+                sourcemap: true,
+            },
+        ],
+        plugins: [
+            // NEW
+            typescript(),
+            peerDepsExternal(),
 
-      postcss({ fileName: "index.css" }),
+            postcss({ fileName: 'index.css' }),
 
-      resolve(),
-      commonjs(),
+            resolve(),
+            commonjs(),
 
-      // NEW
-      terser(),
-    ],
-  },
-  {
-    input: "dist/cjs/types/src/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
-    plugins: [dts.default()],
-    external: [/\.(sass|scss|css)$/],
-  },
-];
+            // NEW
+            terser(),
+        ],
+    },
+    {
+        input: 'dist/cjs/types/src/index.d.ts',
+        output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+        plugins: [dts.default()],
+        external: [/\.(sass|scss|css)$/],
+    },
+]
