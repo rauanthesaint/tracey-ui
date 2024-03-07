@@ -1,0 +1,19 @@
+.TextField {
+    display: flex;
+    flex-direction: column;
+    gap: $unit/2;
+    .TextField__Label {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .TextField__Container {
+        display: flex;
+        align-items: center;
+        gap: $unit * 2;
+        color: $backgroundColor;
+        border-radius: $unit;
+    }
+    .TextField__Hint {
+    }
+}

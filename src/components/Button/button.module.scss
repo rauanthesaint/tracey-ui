@@ -13,21 +13,26 @@
 }
 
 .Button {
-    transition: opacity 100ms linear, transform 100ms ease-out;
+    transition: opacity 100ms linear, transform 100ms ease-out,
+        background-color 100ms linear;
     &.primary {
         background-color: $primaryColor;
         color: $textColor;
         opacity: 1;
     }
     &.secondary {
-        background-color: $secondaryColor;
+        background-color: $backgroundColor;
         color: $textColorAlt;
+        border: 1px solid $secondaryColor;
         opacity: 1;
     }
     &.tertiary {
         background-color: transparent;
         color: $textColorAlt;
-        opacity: 1;
+    }
+    &.danger {
+        background-color: transparent;
+        color: $errorColor;
     }
 }
 
@@ -35,9 +40,7 @@
     &.lg {
         svg {
             $size: 1.5rem;
-            min-width: $size;
-            max-width: $size;
-            width: 100%;
+            width: $size;
             height: $size;
         }
         font-size: 1.5rem;
@@ -46,20 +49,16 @@
     &.md {
         svg {
             $size: 1.25rem;
-            min-width: $size;
-            max-width: $size;
-            width: 100%;
+            width: $size;
             height: $size;
         }
         font-size: 1.25rem;
-        padding: 14px 16px;
+        padding: 12px 16px;
     }
     &.sm {
         svg {
             $size: 1rem;
-            min-width: $size;
-            max-width: $size;
-            width: 100%;
+            width: $size;
             height: $size;
         }
         font-size: 1rem;
@@ -72,12 +71,18 @@
         background-color: $backgroundColorDisabled;
         color: $textColorDisabled;
         cursor: not-allowed;
+
+        border: none;
+        outline: none;
+        transform: none;
+        opacity: 1;
     }
 
     &:focus {
         &.primary,
         &.secondary,
-        &.tertiary {
+        &.tertiary,
+        &.danger {
             outline: 2px solid $focusColor;
             outline-offset: 2px;
         }
@@ -86,16 +91,22 @@
     &:active {
         &.primary,
         &.secondary,
-        &.tertiary {
+        &.tertiary,
+        &.danger {
             transform: scale(0.99);
         }
     }
 
     &:hover {
         &.primary,
-        &.secondary,
+        &.secondary {
+            opacity: 0.9;
+        }
         &.tertiary {
-            opacity: 0.8;
+            background-color: $secondaryColor;
+        }
+        &.danger {
+            background-color: $errorColorAlt;
         }
     }
 }
