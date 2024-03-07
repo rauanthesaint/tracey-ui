@@ -13,15 +13,89 @@
 }
 
 .Button {
+    transition: opacity 100ms linear, transform 100ms ease-out;
     &.primary {
         background-color: $primaryColor;
         color: $textColor;
+        opacity: 1;
+    }
+    &.secondary {
+        background-color: $secondaryColor;
+        color: $textColorAlt;
+        opacity: 1;
+    }
+    &.tertiary {
+        background-color: transparent;
+        color: $textColorAlt;
+        opacity: 1;
     }
 }
 
 .Button {
-    .md {
+    &.lg {
+        svg {
+            $size: 1.5rem;
+            min-width: $size;
+            max-width: $size;
+            width: 100%;
+            height: $size;
+        }
+        font-size: 1.5rem;
+        padding: 14px 16px;
+    }
+    &.md {
+        svg {
+            $size: 1.25rem;
+            min-width: $size;
+            max-width: $size;
+            width: 100%;
+            height: $size;
+        }
         font-size: 1.25rem;
         padding: 14px 16px;
+    }
+    &.sm {
+        svg {
+            $size: 1rem;
+            min-width: $size;
+            max-width: $size;
+            width: 100%;
+            height: $size;
+        }
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+}
+
+.Button {
+    &:disabled {
+        background-color: $backgroundColorDisabled;
+        color: $textColorDisabled;
+        cursor: not-allowed;
+    }
+
+    &:focus {
+        &.primary,
+        &.secondary,
+        &.tertiary {
+            outline: 2px solid $focusColor;
+            outline-offset: 2px;
+        }
+    }
+
+    &:active {
+        &.primary,
+        &.secondary,
+        &.tertiary {
+            transform: scale(0.99);
+        }
+    }
+
+    &:hover {
+        &.primary,
+        &.secondary,
+        &.tertiary {
+            opacity: 0.8;
+        }
     }
 }
