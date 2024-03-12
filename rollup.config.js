@@ -20,16 +20,15 @@ export default [
             },
         ],
         plugins: [
-            // NEW
             typescript(),
             peerDepsExternal(),
-
-            postcss({ fileName: 'index.css' }),
-
+            postcss({
+                minimize: true,
+                modules: true,
+                extract: true,
+            }),
             resolve(),
             commonjs(),
-
-            // NEW
             terser(),
         ],
     },
@@ -37,6 +36,6 @@ export default [
         input: 'dist/cjs/types/src/index.d.ts',
         output: [{ file: 'dist/index.d.ts', format: 'esm' }],
         plugins: [dts.default()],
-        external: [/\.(sass|scss|css)$/],
+        // external: [/\.(sass|scss|css)$/],
     },
 ]

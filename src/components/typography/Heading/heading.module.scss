@@ -1,0 +1,8 @@
+.Heading {
+    $max: 3.25rem;
+    $mid: 3vw;
+    $min: 2.25rem;
+
+    font-size: clamp($min, $mid, $max);
+    font-weight: 600;
+}

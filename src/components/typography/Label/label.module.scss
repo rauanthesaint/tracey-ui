@@ -1,0 +1,35 @@
+@import '../../constants.module.scss';
+
+.Label {
+    font-weight: 400;
+    &.xs {
+        font-size: 0.875rem;
+        color: $accentColor;
+    }
+    &.sm,
+    .md,
+    .lg {
+        font-weight: 700;
+    }
+    &.sm {
+        $max: 1.5rem;
+        $mid: 2vw;
+        $min: 0.875rem;
+
+        font-size: clamp($min, $mid, $max);
+    }
+    &.md {
+        $max: 2rem;
+        $mid: 2vw;
+        $min: 1.25rem;
+
+        font-size: clamp($min, $mid, $max);
+    }
+    &.lg {
+        $max: 2.5rem;
+        $mid: 2.5vw;
+        $min: 1.5rem;
+
+        font-size: clamp($min, $mid, $max);
+    }
+}

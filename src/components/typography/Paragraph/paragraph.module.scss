@@ -1,0 +1,8 @@
+.Paragraph {
+    $max: 1rem;
+    $mid: 3vw;
+    $min: 1.125rem;
+
+    font-size: clamp($min, $mid, $max);
+    font-weight: 400;
+}

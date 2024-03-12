@@ -1,0 +1,8 @@
+.Display {
+    $max: 6rem;
+    $mid: 5vw;
+    $min: 3rem;
+
+    font-size: clamp($min, $mid, $max);
+    font-weight: 700;
+}
