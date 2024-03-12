@@ -4,7 +4,7 @@ import { IPropsInput } from './TextField.types'
 import styles from './text_field.module.scss'
 import clsx from 'clsx'
 
-const TextFiled: FC<IPropsInput> = ({
+const TextField: FC<IPropsInput> = ({
     accessKey,
     autoComplete,
     autoFocus,
@@ -50,6 +50,6 @@ const TextFiled: FC<IPropsInput> = ({
     )
 }
 
-export default TextFiled
+export default TextField
 
 // TODO: Placeholder, rules, validation, isvalid, readonly, pattern, list, controlling,

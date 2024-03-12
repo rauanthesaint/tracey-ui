@@ -13,26 +13,23 @@
 }
 
 .Button {
-    transition: opacity 100ms linear, transform 100ms ease-out,
-        background-color 100ms linear;
+    transition: transform 100ms ease-out, background-color 100ms linear;
     &.primary {
-        background-color: $primaryColor;
-        color: $textColor;
-        opacity: 1;
+        background-color: $activeBackgroundPrimary;
+        color: $activeTextPrimary;
     }
     &.secondary {
-        background-color: $backgroundColor;
-        color: $textColorAlt;
-        border: 1px solid $secondaryColor;
-        opacity: 1;
+        background-color: $activeBackgroundSecondary;
+        color: $activeTextSecondary;
+        border: 1px solid $border;
     }
     &.tertiary {
         background-color: transparent;
-        color: $textColorAlt;
+        color: $activeTextTertiary;
     }
     &.danger {
         background-color: transparent;
-        color: $errorColor;
+        color: $error;
     }
 }
 
@@ -45,6 +42,10 @@
         }
         font-size: 1.5rem;
         padding: 14px 16px;
+
+        &.icon {
+            padding: 14px;
+        }
     }
     &.md {
         svg {
@@ -54,6 +55,10 @@
         }
         font-size: 1.25rem;
         padding: 12px 16px;
+
+        &.icon {
+            padding: 14px;
+        }
     }
     &.sm {
         svg {
@@ -63,27 +68,30 @@
         }
         font-size: 1rem;
         padding: 8px 12px;
+
+        &.icon {
+            padding: 8px;
+        }
     }
 }
 
 .Button {
     &:disabled {
-        background-color: $backgroundColorDisabled;
-        color: $textColorDisabled;
+        background-color: $activeBackgroundDisabled;
+        color: $activeTextDisabled;
         cursor: not-allowed;
 
         border: none;
         outline: none;
         transform: none;
-        opacity: 1;
     }
 
-    &:focus {
+    &:focus-visible {
         &.primary,
         &.secondary,
         &.tertiary,
         &.danger {
-            outline: 2px solid $focusColor;
+            outline: 2px solid $focus;
             outline-offset: 2px;
         }
     }
@@ -98,15 +106,17 @@
     }
 
     &:hover {
-        &.primary,
+        &.primary {
+            background-color: $activeBackgroundHoverPrimary;
+        }
         &.secondary {
-            opacity: 0.9;
+            background-color: $activeBackgroundHoverSecondary;
         }
         &.tertiary {
-            background-color: $secondaryColor;
+            background-color: $activeBackgroundHoverTertiary;
         }
         &.danger {
-            background-color: $errorColorAlt;
+            background-color: $errorAlt;
         }
     }
 }

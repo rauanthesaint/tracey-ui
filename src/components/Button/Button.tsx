@@ -15,6 +15,7 @@ const Button: FC<IPropsButton> = ({
     title = 'Trcaey UI Button',
     size = 'md',
     variant = 'primary',
+    shape = 'rectangle',
 }) => {
     return (
         <button
@@ -28,7 +29,8 @@ const Button: FC<IPropsButton> = ({
                 className,
                 styles.Button,
                 styles[size],
-                styles[variant]
+                styles[variant],
+                styles[shape]
             )}
             title={title}
         >

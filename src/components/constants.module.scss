@@ -1,17 +1,26 @@
-$borderColor: #222222;
-$accentColor: #8f8f8f;
-$errorColor: #f03636;
-$errorColorAlt: #fcd7d7;
-$focusColor: #111111;
-
-$backgroundColor: #eeeeee;
-$backgroundColorDisabled: #e4e4e4;
-
-$textColor: #f6f6f6;
-$textColorDisabled: #8f8f8f;
-$textColorAlt: #111111;
-
-$primaryColor: #4770ff;
-$secondaryColor: #d0d0d0;
-
 $unit: 8px;
+
+$staticBackground: #f6f6f6;
+
+// Active Elements
+$activeBackgroundPrimary: #4770ff;
+$activeBackgroundSecondary: #eeeeee;
+
+$activeBackgroundHoverPrimary: #3652f5;
+$activeBackgroundHoverSecondary: #dcdcdc;
+$activeBackgroundHoverTertiary: #ddecff;
+
+$activeTextPrimary: #f6f6f6;
+$activeTextSecondary: #8f8f8f;
+$activeTextTertiary: #8f8f8f;
+
+$activeTextHoverSecondary: #111111;
+$activeTextHoverTertiary: #111111;
+
+$activeBackgroundDisabled: #e4e4e4;
+$activeTextDisabled: #8f8f8f;
+
+$border: #dcdcdc;
+$focus: #4770ff;
+$error: #f03636;
+$errorAlt: #fcd7d7;
