@@ -4,17 +4,17 @@
     font-weight: 400;
     &.xs {
         font-size: 0.875rem;
-        color: $accentColor;
+        color: $activeTextSecondary;
     }
     &.sm,
-    .md,
-    .lg {
-        font-weight: 700;
+    &.md,
+    &.lg {
+        font-weight: 500;
     }
     &.sm {
         $max: 1.5rem;
         $mid: 2vw;
-        $min: 0.875rem;
+        $min: 1rem;
 
         font-size: clamp($min, $mid, $max);
     }
